@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F2F2">
+
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:srcCompat="@drawable/ic_profile"
+            android:scaleType="centerCrop"
+            android:contentDescription="avatar" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/btnFilter"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/ic_filter"
+            android:contentDescription="filter" />
+    </LinearLayout>
+
+    <!-- CALORIES CARD -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardCalories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- GARANTİ: iç layout'a beyaz background -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/txtKcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1500 / 2000\nkcal"
+                android:textAlignment="center"
+                android:textColor="#111111"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1"
+                    android:background="#2FB44A" />
+
+                <Space android:layout_width="16dp" android:layout_height="1dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1"
+                    android:background="#2FB44A" />
+
+                <Space android:layout_width="16dp" android:layout_height="1dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1"
+                    android:background="#2FB44A" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="carbs\n30 gr"
+                    android:textAlignment="center"
+                    android:textColor="#444444"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="protein\n180 gr"
+                    android:textAlignment="center"
+                    android:textColor="#444444"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="fat\n16 gr"
+                    android:textAlignment="center"
+                    android:textColor="#444444"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- DAY SELECTOR -->
+    <LinearLayout
+        android:id="@+id/daySelector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/cardCalories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/dayS0"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:text="S"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:background="@drawable/bg_day_normal" />
+
+        <TextView
+            android:id="@+id/dayM"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="M"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_day_selected" />
+
+        <TextView
+            android:id="@+id/dayT"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="T"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:background="@drawable/bg_day_normal" />
+
+        <TextView
+            android:id="@+id/dayW"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="W"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:background="@drawable/bg_day_normal" />
+
+        <TextView
+            android:id="@+id/dayT2"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="T"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:background="@drawable/bg_day_normal" />
+
+        <TextView
+            android:id="@+id/dayF"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="F"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:background="@drawable/bg_day_normal" />
+
+        <TextView
+            android:id="@+id/dayS"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="S"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:textAlignment="center"
+            android:background="@drawable/bg_day_normal" />
+    </LinearLayout>
+
+    <!-- CONTENT SCROLL -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/daySelector"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="14dp">
+
+            <!-- BREAKFAST -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:background="#8EDB63">
+
+                    <TextView
+                        android:id="@+id/btnBreakfast"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Breakfast"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/addBreakfast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ Add Meal"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- LUNCH -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:background="#8EDB63">
+
+                    <TextView
+                        android:id="@+id/btnLunch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lunch"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/addLunch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ Add Meal"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- DINNER -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:background="#8EDB63">
+
+                    <TextView
+                        android:id="@+id/btnDinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dinner"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/addDinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ Add Meal"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SNACK -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:background="#8EDB63">
+
+                    <TextView
+                        android:id="@+id/btnSnack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Snack"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/addSnack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ Add Meal"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- EXERCISE -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:background="#F2C6A8">
+
+                    <TextView
+                        android:id="@+id/btnExercise"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Exercise"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/addExercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ Add"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV -->
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/navChart"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_chart"
+            android:contentDescription="chart"
+            android:scaleType="centerInside"/>
+
+        <ImageView
+            android:id="@+id/navChecklist"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_checklist"
+            android:contentDescription="checklist"
+            android:scaleType="centerInside"/>
+
+        <ImageView
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_profile"
+            android:contentDescription="profile"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
