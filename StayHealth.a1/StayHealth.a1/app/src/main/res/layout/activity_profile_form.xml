@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F2">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Profile Form"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="#111111"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/edtAge"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:hint="Age"
+            android:inputType="number"
+            android:background="@drawable/bg_search"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"/>
+
+        <EditText
+            android:id="@+id/edtWeight"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:hint="Weight (kg)"
+            android:inputType="number"
+            android:background="@drawable/bg_search"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"/>
+
+        <EditText
+            android:id="@+id/edtHeight"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:hint="Height (cm)"
+            android:inputType="number"
+            android:background="@drawable/bg_search"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"/>
+
+        <EditText
+            android:id="@+id/edtChronic"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:hint="Chronic illnesses (Yes/No)"
+            android:inputType="text"
+            android:background="@drawable/bg_search"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"/>
+
+        <EditText
+            android:id="@+id/edtKcal"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:hint="Daily kcal"
+            android:inputType="number"
+            android:background="@drawable/bg_search"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"/>
+
+        <TextView
+            android:id="@+id/btnSaveProfile"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_btn_orange"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

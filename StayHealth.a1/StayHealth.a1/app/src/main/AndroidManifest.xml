@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stayhealth">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name=".StayHealthApp"
+        android:theme="@style/Theme.StayHealth">
+
+        <!-- LAUNCHER -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- AUTH -->
+        <activity android:name=".ui.auth.SignUpActivity" android:exported="false" />
+        <activity android:name=".ui.auth.ForgotPasswordActivity" android:exported="false" />
+        <activity android:name=".ui.auth.EmailVerifyActivity" android:exported="false" />
+
+        <!-- HOME -->
+        <activity android:name=".ui.home.DashboardActivity" android:exported="false" />
+        <activity android:name=".ui.home.MealSelectionActivity" android:exported="false" />
+        <activity android:name=".ui.home.ProgressChartActivity" android:exported="false" />
+        <activity android:name=".ui.home.TodayDietPlanActivity" android:exported="false" />
+        <activity android:name=".ui.home.DieticianDashboardActivity" android:exported="false" />
+
+        <!-- CONSULTANT -->
+        <activity android:name=".ui.consultant.ConsultantListActivity" android:exported="false" />
+        <activity android:name=".ui.consultant.ConsultantDetailActivity" android:exported="false" />
+
+        <activity android:name=".ui.profile.ProfileActivity"/>
+        <activity android:name=".ui.consultant.ConsultantDefinitionActivity" />
+        <activity android:name=".ui.profile.ProfileFormActivity" />
+
+
+    </application>
+
+</manifest>

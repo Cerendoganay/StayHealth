@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Shackle -->
+    <path
+        android:fillColor="#FFD9A3"
+        android:pathData="M70,85 C70,55 90,35 115,35 C140,35 160,55 160,85 L160,95 L145,95 L145,85 C145,64 132,50 115,50 C98,50 85,64 85,85 L85,95 L70,95 Z"/>
+
+    <!-- Body -->
+    <path
+        android:fillColor="#F7B24A"
+        android:pathData="M65,90 L165,90 C175,90 183,98 183,108 L183,165 C183,175 175,183 165,183 L65,183 C55,183 47,175 47,165 L47,108 C47,98 55,90 65,90 Z"/>
+
+    <!-- Keyhole outer -->
+    <path
+        android:fillColor="#E67E22"
+        android:pathData="M115,118 C103,118 94,127 94,139 C94,147 98,154 104,158 L104,172 C104,178 109,183 115,183 C121,183 126,178 126,172 L126,158 C132,154 136,147 136,139 C136,127 127,118 115,118 Z"/>
+
+    <!-- Keyhole inner -->
+    <path
+        android:fillColor="#C95B14"
+        android:pathData="M115,130 C109,130 104,135 104,141 C104,145 106,149 110,151 L110,168 C110,171 112,173 115,173 C118,173 120,171 120,168 L120,151 C124,149 126,145 126,141 C126,135 121,130 115,130 Z"/>
+
+    <!-- small shadow -->
+    <path
+        android:fillColor="#000000"
+        android:fillAlpha="0.08"
+        android:pathData="M55,160 C70,175 95,185 120,185 C145,185 170,175 185,160 L185,175 C185,185 177,193 167,193 L63,193 C53,193 45,185 45,175 L45,160 Z"/>
+</vector>

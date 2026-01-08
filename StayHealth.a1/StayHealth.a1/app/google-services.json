@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "849335979584",
+    "project_id": "stayhealth-c17f5",
+    "storage_bucket": "stayhealth-c17f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849335979584:android:54f705137b1a20bd6819a5",
+        "android_client_info": {
+          "package_name": "com.stayhealth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiCIYvZZxubPRojufUxwTWYhFrrODy9Vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

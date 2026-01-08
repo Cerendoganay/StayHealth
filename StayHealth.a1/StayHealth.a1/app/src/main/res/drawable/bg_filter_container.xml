@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Arka plan rengi (peach / açık turuncu) -->
+    <solid android:color="#F6D0BE"/>
+
+    <!-- Yuvarlak köşeler -->
+    <corners android:radius="14dp"/>
+
+</shape>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:background="@color/brand_primary_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/brand_primary"
+            android:contentDescription="back"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Progress Chart"
+            style="@style/TextTitle"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardFilter"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#B0B0B0"
+                app:cardBackgroundColor="@color/surface"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Spinner
+                    android:id="@+id/spinnerRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_spinner_week"
+                    android:spinnerMode="dropdown"
+                    android:popupBackground="#FFFFFF"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtStatistic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistic"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/cardFilter"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtSeeMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See More"
+                android:textSize="12sp"
+                android:textColor="#2E7D32"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="@id/txtStatistic"
+                app:layout_constraintBottom_toBottomOf="@id/txtStatistic"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardChart"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFF7F2"
+                app:layout_constraintTop_toBottomOf="@id/txtStatistic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/yLabels"
+                        android:layout_width="52dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2000" android:textSize="11sp" android:textColor="#666666"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1500" android:textSize="11sp" android:textColor="#666666"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1000" android:textSize="11sp" android:textColor="#666666"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="500"  android:textSize="11sp" android:textColor="#666666"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"    android:textSize="11sp" android:textColor="#666666"/>
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/plot"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toEndOf="@id/yLabels"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/xLabels">
+
+                        <TextView
+                            android:id="@+id/txtEmptyChart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No data yet"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <View android:layout_width="0dp" android:layout_height="1dp" android:background="#EAEAEA" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+                        <View android:layout_width="0dp" android:layout_height="1dp" android:background="#EAEAEA" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.25" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+                        <View android:layout_width="0dp" android:layout_height="1dp" android:background="#EAEAEA" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.50" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+                        <View android:layout_width="0dp" android:layout_height="1dp" android:background="#EAEAEA" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.75" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <LinearLayout
+                            android:id="@+id/bars"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <View android:id="@+id/barMon" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                            <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                            <View android:id="@+id/barTue" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                            <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                            <View android:id="@+id/barWed" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                            <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                            <View android:id="@+id/barThu" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                            <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                            <View android:id="@+id/barFri" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                            <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                            <View android:id="@+id/barSat" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                            <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                            <View android:id="@+id/barSun" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:background="@color/brand_primary_light"/>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/xLabels"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingStart="60dp"
+                        android:paddingEnd="8dp"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView android:id="@+id/lblMon" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="M" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                        <TextView android:id="@+id/lblTue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="T" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                        <TextView android:id="@+id/lblWed" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="W" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                        <TextView android:id="@+id/lblThu" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="T" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                        <TextView android:id="@+id/lblFri" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="F" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                        <TextView android:id="@+id/lblSat" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="S" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                        <TextView android:id="@+id/lblSun" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="S" android:gravity="center" android:textSize="11sp" android:textColor="#777777"/>
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFF7F2"
+                app:layout_constraintTop_toBottomOf="@id/cardChart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Average Daily Calorie"
+                            android:textSize="13sp"
+                            android:textColor="#333333"/>
+
+                        <TextView
+                            android:id="@+id/txtAvgKcal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1800 kcal"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:textColor="#C16A2B"/>
+                    </LinearLayout>
+
+                    <Space android:layout_width="1dp" android:layout_height="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="The day when the diet\nlist is most followed"
+                            android:textSize="12sp"
+                            android:textColor="#666666"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtBestDay"
+                            android:text="Wednesday"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:textColor="#C16A2B"/>
+                    </LinearLayout>
+
+                    <Space android:layout_width="1dp" android:layout_height="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="The day when the diet\nlist is least followed"
+                            android:textSize="12sp"
+                            android:textColor="#666666"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtWorstDay"
+                            android:text="Thursday"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:textColor="#C16A2B"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

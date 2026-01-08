@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Palette for consistent UI -->
+    <color name="brand_primary">#2E7D32</color>
+    <color name="brand_primary_light">#AEEB8C</color>
+    <color name="bg_primary">#F7F9FC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_muted">#F1F3F7</color>
+    <color name="text_primary">#111111</color>
+    <color name="text_secondary">#4A4A4A</color>
+    <color name="text_muted">#777777</color>
+    <color name="divider">#E5E8EF</color>
+    <color name="accent_positive">#8EDB63</color>
+</resources>

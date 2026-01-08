@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- TOP GREEN BAR -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:background="@color/brand_primary_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- back arrow -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="@dimen/spacing_lg"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/brand_primary"
+            android:contentDescription="back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- title row: < Today's Diet Plan > -->
+        <LinearLayout
+            android:id="@+id/titleRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnPrevDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt;"
+                style="@style/TextSubtitle"
+                android:textColor="@color/text_primary"
+                android:paddingHorizontal="@dimen/spacing_md"
+                android:paddingVertical="@dimen/spacing_xs"/>
+
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Diet Plan"
+                style="@style/TextTitle"
+                android:paddingHorizontal="@dimen/spacing_md"/>
+
+            <TextView
+                android:id="@+id/btnNextDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                style="@style/TextSubtitle"
+                android:textColor="@color/text_primary"
+                android:paddingHorizontal="@dimen/spacing_md"
+                android:paddingVertical="@dimen/spacing_xs"/>
+        </LinearLayout>
+
+        <!-- date row -->
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextCaption"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/titleRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/spacing_xs"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_lg"
+            android:paddingBottom="@dimen/spacing_md">
+
+            <!-- BREAKFAST CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_lg"
+                android:layout_marginEnd="@dimen/spacing_lg"
+                android:layout_marginBottom="@dimen/spacing_md"
+                app:cardCornerRadius="@dimen/card_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/surface">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:id="@+id/txtBreakfastTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BREAKFAST (08:00)"
+                        android:textAllCaps="true"
+                        style="@style/TextCaption"
+                        android:textColor="@color/text_secondary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- ✅ SELECT BUTTON -->
+                    <ImageView
+                        android:id="@+id/imgBreakfastStatus"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_circle_green"
+                        android:src="@drawable/ic_check_white"
+                        android:padding="4dp"
+                        android:contentDescription="breakfast status"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtBreakfastItems"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBody"
+                        android:text="1 glass of milk\n2 slices of whole wheat bread\n1 slice of white cheese\n1 boiled egg\n4-5 olives"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtBreakfastTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="@dimen/spacing_md"/>
+
+                    <TextView
+                        android:id="@+id/txtBreakfastMacros"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBody"
+                        android:text="Total: 320 kcal\nProtein: 20g\nCarbohydrates: 25g\nFat: 15g"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtBreakfastItems"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="@dimen/spacing_md"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- LUNCH CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_lg"
+                android:layout_marginEnd="@dimen/spacing_lg"
+                android:layout_marginBottom="@dimen/spacing_md"
+                app:cardCornerRadius="@dimen/card_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/surface">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:id="@+id/txtLunchTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LUNCH (13:00)"
+                        android:textAllCaps="true"
+                        style="@style/TextCaption"
+                        android:textColor="@color/text_secondary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- ✅ SELECT BUTTON -->
+                    <ImageView
+                        android:id="@+id/imgLunchStatus"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_circle_grey"
+                        android:contentDescription="lunch status"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtLunchItems"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBody"
+                        android:text="Chicken salad (150g chicken breast, mixed greens)\n1 slice of whole wheat bread\n1 bowl of yogurt"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtLunchTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="@dimen/spacing_md"/>
+
+                    <TextView
+                        android:id="@+id/txtLunchMacros"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBody"
+                        android:text="Total: 450 kcal\nProtein: 40g\nCarbohydrates: 20g\nFat: 15g"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtLunchItems"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="@dimen/spacing_md"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- DINNER CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_lg"
+                android:layout_marginEnd="@dimen/spacing_lg"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardCornerRadius="@dimen/card_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/surface">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:id="@+id/txtDinnerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DINNER (19:00)"
+                        android:textAllCaps="true"
+                        style="@style/TextCaption"
+                        android:textColor="@color/text_secondary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- ✅ SELECT BUTTON -->
+                    <ImageView
+                        android:id="@+id/imgDinnerStatus"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_circle_grey"
+                        android:contentDescription="dinner status"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtDinnerItems"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBody"
+                        android:text="1 serving of lentil soup\n5 tablespoons of bulgur pilaf\n1 plate of vegetable dish (e.g., green beans)"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtDinnerTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="@dimen/spacing_md"/>
+
+                    <TextView
+                        android:id="@+id/txtDinnerMacros"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBody"
+                        android:text="Total: 520 kcal\nProtein: 25g\nCarbohydrates: 45g\nFat: 15g"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtDinnerItems"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="@dimen/spacing_md"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV (Dashboard ile aynı mantıkta) -->
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:background="@color/surface"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:contentDescription="home"/>
+
+        <ImageView
+            android:id="@+id/navChart"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_chart"
+            android:contentDescription="chart"/>
+
+        <ImageView
+            android:id="@+id/navProfile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="profile"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
